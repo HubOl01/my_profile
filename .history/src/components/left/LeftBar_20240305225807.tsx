@@ -1,11 +1,10 @@
 import React from 'react'
+import './LeftBar.style.scss'
 
-export default function LeftBar() {
+const LeftBar = () => {
   return (
-    <div>
-        
-    <main className="container-fluid Start">
-    <div className="card mb-4 shadow bg-white rounded">
+    <>
+    <Box className="card" >
       <a title="Куличков Олег" href="https://vk.com/oleg01f">
         <img
           className="card-img-top"
@@ -76,9 +75,9 @@ export default function LeftBar() {
           </div>
         </div>
       </div>
-    </div>
-    
-  </main>
-</div>
+    </Box>
+</>
   )
 }
+
+export default LeftBar
