@@ -1,0 +1,7 @@
+const websites = [
+
+]
+
+class Web{
+    
+}
