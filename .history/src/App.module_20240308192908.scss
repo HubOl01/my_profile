@@ -1,0 +1,10 @@
+@media (max-width: 4px) {
+    .profile{
+      min-width: 100%;
+    }
+  }
+  @media screen and (min-width: 425px) {
+    .profile{
+      min-width: 300px;
+    }
+  }
