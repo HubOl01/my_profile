@@ -1,7 +1,0 @@
-const websites = [
-
-]
-
-class Web{
-    
-}

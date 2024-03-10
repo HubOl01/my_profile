@@ -28,9 +28,11 @@ const LeftBar = () => {
   return (
     <>
       <Card elevation={5}
-      className={style.leftCard}
+      // className={style.leftCard}
         sx={{
+          margin: "10px 10px",
           borderRadius: 3,
+          // maxWidth: "300px"
         }} >
         <a title="Куличков Олег" href="https://vk.com/oleg01f">
           <img

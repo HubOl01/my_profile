@@ -1,6 +1,8 @@
-export interface IProjects {
+export interface IProject {
+  id: number;
   title: string;
   description: string[];
+  url_background?: string;
   url_icon: string;
   url_images: string[];
   url_stores: string[];
@@ -8,9 +10,15 @@ export interface IProjects {
   creator: string;
   fullStack: string[];
   platforms: string[];
+  categories?: string[];
   color: string;
 }
 export const nickname = "ru-developer";
+
+// export enum Categories{
+
+// }
+
 export enum Platforms {
   Android = "Android",
   IOS = "IOS",
@@ -46,8 +54,13 @@ export enum FullStack {
   Vite = "Vite",
 }
 
-export const projects: IProjects[] = [
+export interface IProjects {
+  projects: IProject[]
+}
+
+export const projects: IProject[] = [
   {
+    id: 1,
     title: "My Songbook",
     description: [
       "My Songbook – это творческая мастерская в вашем кармане. Независимо от того, являетесь ли вы гитаристом, певцом, композитором или просто энтузиастом музыки, это приложение поможет вам воплотить ваши музыкальные идеи в жизнь.",
@@ -81,6 +94,7 @@ export const projects: IProjects[] = [
     color: "",
   },
   {
+    id: 2,
     title: "Мой универ - ИГХТУ",
     description: [
       '"Мой универ - ИГХТУ" - это мобильное приложение, специально разработанное для студентов Ивановского государственного химико-технологического университета. Вы теперь сможете посмотреть расписание пар даже без интернета! Также можно получать уведомления об информации пар каждый день. В приложении также доступны заметки и вы можете записывать лекции, делать пометки, прикреплять ссылки и также делиться ими.',
@@ -110,6 +124,7 @@ export const projects: IProjects[] = [
     color: "",
   },
   {
+    id: 3,
     title: "MyAppHome",
     description: ["Приложение для многоквартирных домов"],
     url_icon: "",
@@ -122,6 +137,7 @@ export const projects: IProjects[] = [
     color: "",
   },
   {
+    id: 4,
     title: "City Adventures",
     description: [],
     url_icon: "",
@@ -134,6 +150,7 @@ export const projects: IProjects[] = [
     color: "",
   },
   {
+    id: 5,
     title: "Bellisemo",
     description: ["Student project for study architectural technologies"],
     url_icon: "",
@@ -146,6 +163,7 @@ export const projects: IProjects[] = [
     color: "",
   },
   {
+    id: 6,
     title: "Weather",
     description: ["Student project for study kotlin jetpack compose"],
     url_icon: "",
@@ -162,6 +180,7 @@ export const projects: IProjects[] = [
     color: "",
   },
   {
+    id: 7,
     title: "My portfolio",
     description: ["Вебсайт для показа своих проектов, которые мы видим здесь"],
     url_icon: "",
