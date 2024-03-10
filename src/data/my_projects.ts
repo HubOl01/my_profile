@@ -1,10 +1,17 @@
+import icon_MyS from '../assets/images/My projects/My Songbook/my_songbook.png';
+import background_MyS from '../assets/images/My projects/My Songbook/image16_9.png';
+import img1_MyS from '../assets/images/My projects/My Songbook/screens/ru/screen_1.jpg';
+import img2_MyS from '../assets/images/My projects/My Songbook/screens/ru/screen_2.jpg';
+import img3_MyS from '../assets/images/My projects/My Songbook/screens/ru/screen_3.jpg';
+import img4_MyS from '../assets/images/My projects/My Songbook/screens/ru/screen_4.jpg';
+
 export interface IProject {
   id: number;
   title: string;
   description: string[];
   url_background?: string;
   url_icon: string;
-  url_images: string[];
+  url_images?: string[];
   url_stores: string[];
   url_sources: string[];
   creator: string;
@@ -80,8 +87,9 @@ export const projects: IProject[] = [
       "\n",
       "Неважно, вы начинающий музыкант или профессионал, My Songbook поможет вам создать и поделиться музыкой, которая касается сердец. Начните свое музыкальное путешествие сегодня!",
     ],
-    url_icon: "",
-    url_images: [],
+    url_background: background_MyS,
+    url_icon: icon_MyS,
+    url_images: [img1_MyS, img2_MyS, img3_MyS, img4_MyS],
     url_stores: [
       "https://apps.rustore.ru/app/ru.ru_developer.my_songbook",
       "https://appgallery.huawei.com/app/C109087129",

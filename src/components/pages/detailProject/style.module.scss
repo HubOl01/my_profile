@@ -1,3 +1,17 @@
 .description {
     text-align: start;
+    margin: 0 2em 2em 2em;
+}
+strong{
+    display: flex;
+    text-align: start;
+    margin: 0 0 1em 2em;
+    // justify-content: start;
+}
+.img_screen{
+    // height: 400px;
+    width: 20%;
+    margin: 10px;
+    border-radius: 10px;
+    // aspect-ratio: 9/16;
 }
