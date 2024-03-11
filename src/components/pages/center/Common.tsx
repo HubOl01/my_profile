@@ -33,7 +33,16 @@ export default function Common() {
       <h2>
         Проекты
       </h2>
-      <ProjectCard project={projects[1]} />
+      <Grid container gap={0} columns={12} xs={4}>
+      {projects.map((project) =>
+      (
+        // <Grid xs={4}>
+          <ProjectCard project={project} />
+        // </Grid>
+        )
+        )}
+        </Grid>
+
     </div>
   )
 }

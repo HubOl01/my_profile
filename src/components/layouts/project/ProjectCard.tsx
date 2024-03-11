@@ -13,8 +13,10 @@ export default function ProjectCard({project}: ProjectCardProps) {
             <Card sx={{
                 aspectRatio: 16 / 9,
                 borderRadius: "10px",
-                height: "100%",
-                width: "100%"
+                height: "auto",
+                margin: "4px",
+                // height: "100%",
+                width: "auto"
             }}>
                 <CardActionArea sx={{
                     border: "transparent"
@@ -25,6 +27,7 @@ export default function ProjectCard({project}: ProjectCardProps) {
                         component="img"
                     // height="140"
                     image={project.url_background}
+                    // image="../../../assets/images/My projects/WeatherKotlin/bg_img.png"
                     // alt="green iguana"
                     />
                     <CardContent>

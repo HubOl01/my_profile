@@ -1,18 +1,41 @@
-import icon_MyS from '../assets/images/My projects/My Songbook/my_songbook.png';
-import background_MyS from '../assets/images/My projects/My Songbook/image16_9.png';
-import img1_MyS from '../assets/images/My projects/My Songbook/screens/ru/screen_1.jpg';
-import img2_MyS from '../assets/images/My projects/My Songbook/screens/ru/screen_2.jpg';
-import img3_MyS from '../assets/images/My projects/My Songbook/screens/ru/screen_3.jpg';
-import img4_MyS from '../assets/images/My projects/My Songbook/screens/ru/screen_4.jpg';
+import icon_MyS from "../assets/images/My projects/My Songbook/my_songbook.png";
+import bg_MyS from "../assets/images/My projects/My Songbook/image16_9.png";
+import img1_MyS from "../assets/images/My projects/My Songbook/screens/ru/screen_1.jpg";
+import img2_MyS from "../assets/images/My projects/My Songbook/screens/ru/screen_2.jpg";
+import img3_MyS from "../assets/images/My projects/My Songbook/screens/ru/screen_3.jpg";
+import img4_MyS from "../assets/images/My projects/My Songbook/screens/ru/screen_4.jpg";
+import icon_MyU from "../assets/images/My projects/Мой универ - ИГХТУ/icon.png";
+import bg_MyU from "../assets/images/My projects/Мой универ - ИГХТУ/bg_img.png";
+import img1_MyU from "../assets/images/My projects/Мой универ - ИГХТУ/screens/screen_1.png";
+import img2_MyU from "../assets/images/My projects/Мой универ - ИГХТУ/screens/screen_2.png";
+import img3_MyU from "../assets/images/My projects/Мой универ - ИГХТУ/screens/screen_3.png";
+import img4_MyU from "../assets/images/My projects/Мой универ - ИГХТУ/screens/screen_4.png";
+import img5_MyU from "../assets/images/My projects/Мой универ - ИГХТУ/screens/screen_5.png";
+import img6_MyU from "../assets/images/My projects/Мой универ - ИГХТУ/screens/screen_6.png";
+import icon_MyH from "../assets/images/My projects/MyAppHome/logotip.png";
+import bg_MyH from "../assets/images/My projects/MyAppHome/bg_img.png";
+import img1_MyH from "../assets/images/My projects/MyAppHome/screens/screen_1.png";
+import img2_MyH from "../assets/images/My projects/MyAppHome/screens/screen_2.png";
+import img3_MyH from "../assets/images/My projects/MyAppHome/screens/screen_3.png";
+import img4_MyH from "../assets/images/My projects/MyAppHome/screens/screen_4.png";
+import img5_MyH from "../assets/images/My projects/MyAppHome/screens/screen_5.png";
+import img6_MyH from "../assets/images/My projects/MyAppHome/screens/screen_6.png";
+import img7_MyH from "../assets/images/My projects/MyAppHome/screens/screen_7.png";
+// import icon_CA from '';
+// import bg_CA from '../assets/images/My projects/Мой универ - ИГХТУ/bg_img.png';
+import img1_CA from "../assets/images/My projects/City Adventures/screens/screen_1.jpg";
+import img2_CA from "../assets/images/My projects/City Adventures/screens/screen_2.jpg";
+import img3_CA from "../assets/images/My projects/City Adventures/screens/screen_3.jpg";
+import img4_CA from "../assets/images/My projects/City Adventures/screens/screen_4.png";
 
 export interface IProject {
   id: number;
   title: string;
   description: string[];
   url_background?: string;
-  url_icon: string;
+  url_icon?: string;
   url_images?: string[];
-  url_stores: string[];
+  url_stores?: string[];
   url_sources: string[];
   creator: string;
   fullStack: string[];
@@ -59,10 +82,12 @@ export enum FullStack {
   CSS = "CSS",
   SCSS = "SCSS",
   Vite = "Vite",
+  NestJS = "NestJS",
+  Prisma = "Prisma",
 }
 
 export interface IProjects {
-  projects: IProject[]
+  projects: IProject[];
 }
 
 export const projects: IProject[] = [
@@ -87,7 +112,7 @@ export const projects: IProject[] = [
       "\n",
       "Неважно, вы начинающий музыкант или профессионал, My Songbook поможет вам создать и поделиться музыкой, которая касается сердец. Начните свое музыкальное путешествие сегодня!",
     ],
-    url_background: background_MyS,
+    url_background: bg_MyS,
     url_icon: icon_MyS,
     url_images: [img1_MyS, img2_MyS, img3_MyS, img4_MyS],
     url_stores: [
@@ -120,8 +145,9 @@ export const projects: IProject[] = [
       "\n",
       "Также приложение адаптировано под планшеты      ",
     ],
-    url_icon: "",
-    url_images: [],
+    url_background: bg_MyU,
+    url_icon: icon_MyU,
+    url_images: [img1_MyU, img2_MyU, img3_MyU, img4_MyU, img5_MyU, img6_MyU],
     url_stores: [
       "https://apps.rustore.ru/app/ru.ru_developer.my_university_isuct",
     ],
@@ -135,9 +161,17 @@ export const projects: IProject[] = [
     id: 3,
     title: "MyAppHome",
     description: ["Приложение для многоквартирных домов"],
-    url_icon: "",
-    url_images: [],
-    url_stores: [],
+    url_icon: icon_MyH,
+    url_background: bg_MyH,
+    url_images: [
+      img1_MyH,
+      img2_MyH,
+      img3_MyH,
+      img4_MyH,
+      img5_MyH,
+      img6_MyH,
+      img7_MyH,
+    ],
     url_sources: [],
     creator: "Создано вместе с командой OVERLAGO",
     fullStack: [FullStack.Flutter, FullStack.Dart],
@@ -147,10 +181,27 @@ export const projects: IProject[] = [
   {
     id: 4,
     title: "City Adventures",
-    description: [],
-    url_icon: "",
-    url_images: [],
-    url_stores: [],
+    description: [
+      "City Adventures - это захватывающее мобильное приложение, которое превращает вашу прогулку по городу в увлекательное приключение! Исследуйте свой город совершенно по-новому, обнаруживая его забытые и малоизвестные жемчужины.",
+      "\n",
+      "Особенности:",
+      "Интерактивная карта: Приложение предоставляет вам доступ к интерактивной карте вашего города, на которой отмечены достопримечательности и скрытые сокровища.",
+      "\n",
+      "Получайте достижения и опыт: Посещая места и достопримечательности, вы зарабатываете достижения и опыт, что делает каждую поездку еще увлекательнее.",
+      "\n",
+      "Исторические факты: Узнайте увлекательные исторические факты о каждой достопримечательности благодаря нашей информативной базе данных.",
+      "\n",
+      "Соревнования с друзьями: Соревнуйтесь с друзьями и семьей, чтобы узнать, кто может найти больше мест и заработать больше достижений.",
+      "\n",
+      "Почему City Adventures?",
+      "City Adventures поможет вам:",
+      "Новым способом взглянуть на свой город.",
+      "Провести время с семьей и друзьями с увлекательными маршрутами.",
+      "Насладиться обучающими историческими фактами.",
+      "Повысить уровень активности и исследовательских навыков.",
+      "Присоединяйтесь к нам в City Adventures и начните увлекательное путешествие по вашему городу уже сегодня!",
+    ],
+    url_images: [img1_CA, img2_CA, img3_CA, img4_CA],
     url_sources: [],
     creator: "Создано с командой на хакатоне",
     fullStack: [FullStack.Flutter, FullStack.Dart],
@@ -163,7 +214,6 @@ export const projects: IProject[] = [
     description: ["Student project for study architectural technologies"],
     url_icon: "",
     url_images: [],
-    url_stores: [],
     url_sources: [],
     creator: "Student project",
     fullStack: [FullStack.React, FullStack.Typescript],
@@ -172,11 +222,10 @@ export const projects: IProject[] = [
   },
   {
     id: 6,
-    title: "Weather",
+    title: "WeatherKotlin",
     description: ["Student project for study kotlin jetpack compose"],
     url_icon: "",
     url_images: [],
-    url_stores: [],
     url_sources: [],
     creator: nickname,
     fullStack: [
