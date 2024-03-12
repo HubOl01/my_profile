@@ -2,10 +2,12 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typo
 import { IProject } from '../../../data/my_projects';
 import { useNavigate } from 'react-router-dom';
 import styles from '../project/style.module.scss';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 interface ProjectCardProps {
     project: IProject;
 }
+
 
 export default function ProjectCard({ project }: ProjectCardProps) {
     const navigate = useNavigate();
@@ -14,9 +16,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Card sx={{
                 borderRadius: "10px",
                 minWidth: 300,
+                // position: 'relative',
             }}>
                 <CardActionArea sx={{
-                    border: "transparent"
+                    border: "transparent",
                 }}
                     onClick={() => navigate(`/project/${project.id}`)}
                 >
@@ -26,35 +29,58 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         image={project.url_background}
                         sx={
                             {
+                                // background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%)',
                                 aspectRatio: 16 / 9,
+                                // position: 'relative',
+                                // height: 0,
+                                // paddingTop: '56.25%'
                             }
                         }
                         onDragStart={(event) => event.preventDefault()}
-                    // image="../../../assets/images/My projects/WeatherKotlin/bg_img.png"
-                    // alt="green iguana"
                     />
-                    <CardContent sx={{ padding: '0px' }}>
+
+                    <div className={styles.posPlatforms}>
                         {project.platforms.map((platform) => (<div className={styles.platforms}>
                             {
                                 platform
                             }
                         </div>))}
+                    </div>
+
+                    <CardContent sx={{ padding: '0px' }}>
                         <Typography gutterBottom variant="h5" component="div">
                             {project.title}
                         </Typography>
+                    <div className={styles.posFullStack}>
+                        {project.fullStack.map((stack) => (<div className={styles.fullStack}>
+                            {
+                                stack
+                            }
+                        </div>))}
+                    </div>
 
                     </CardContent>
 
                 </CardActionArea>
-                <CardActions>
+                <CardActions
+                sx={{
+                    justifyContent: 'end',
+                }}>
                     {/* {
                         project.
                     } */}
+                    {project.url_sources.map((source) =>
+                    (
+                        <Button size="small" sx={{ color: 'black' }} startIcon={<GitHubIcon/>}/* color="primary" */>
+                            {source.includes("github") ? (
+                                <>
+                                GitHub
+                                </>
+                                ) : <></>}
+                        </Button>
 
-
-                    <Button size="small" color="primary">
-                        small
-                    </Button>
+                    )
+                    )}
                 </CardActions>
             </Card>
         </>
