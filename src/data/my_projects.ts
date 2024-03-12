@@ -34,7 +34,7 @@ export interface IProject {
   description: string[];
   url_background?: string;
   url_icon?: string;
-  url_images?: string[];
+  url_images: string[];
   url_stores?: string[];
   url_sources: string[];
   creator: string;

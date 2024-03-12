@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Grid container>
         <Grid className={style.profile} item xs={4}>
-          {/* <LeftBar /> */}
+          <LeftBar />
         </Grid>
         <Grid item xs>
           <Common />

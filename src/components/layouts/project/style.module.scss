@@ -1,0 +1,12 @@
+.clipLabel{
+    margin: 5px 10px;
+    padding: 5px 10px;
+    width: fit-content;
+    color: white;
+    border-radius: 20px;
+}
+.platforms{
+    @extend .clipLabel;
+    background-color: gray;
+    font-size: small;
+}

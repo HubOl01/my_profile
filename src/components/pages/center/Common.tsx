@@ -33,12 +33,12 @@ export default function Common() {
       <h2>
         Проекты
       </h2>
-      <Grid container gap={0} columns={12} xs={4}>
+      <Grid container item spacing={1} columns={12}>
       {projects.map((project) =>
       (
-        // <Grid xs={4}>
+        <Grid item xs>
           <ProjectCard project={project} />
-        // </Grid>
+        </Grid>
         )
         )}
         </Grid>
