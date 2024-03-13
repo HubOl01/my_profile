@@ -3,6 +3,11 @@ import { IProject } from '../../../data/my_projects';
 import { useNavigate } from 'react-router-dom';
 import styles from '../project/style.module.scss';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import RustoreIcon from '../../../assets/images/rustore.png';
+import HuaweiIcon from '../../../assets/images/appgallery.png';
+import GetAppsIcon from '../../../assets/images/getapp.png';
+import Img_icon from '../img_icons/Img_icon';
+
 
 interface ProjectCardProps {
     project: IProject;
@@ -51,32 +56,48 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         <Typography gutterBottom variant="h5" component="div">
                             {project.title}
                         </Typography>
-                    <div className={styles.posFullStack}>
-                        {project.fullStack.map((stack) => (<div className={styles.fullStack}>
-                            {
-                                stack
-                            }
-                        </div>))}
-                    </div>
+                        <div className={styles.posFullStack}>
+                            {project.fullStack.map((stack) => (<div className={styles.fullStack}>
+                                {
+                                    stack
+                                }
+                            </div>))}
+                        </div>
 
                     </CardContent>
 
                 </CardActionArea>
                 <CardActions
-                sx={{
-                    justifyContent: 'end',
-                }}>
-                    {/* {
-                        project.
-                    } */}
+                    sx={{
+                        justifyContent: 'space-between',
+                    }}>
+                        <div>
+                    {project.url_stores != null ?
+                        project.url_stores!.map((store) => (
+                            <a href={store} style={{ color: 'black' }} onDragStart={(event) => event.preventDefault()}>
+                                {store.includes("rustore") ? (
+                                    <Img_icon icon={RustoreIcon}
+                                    ></Img_icon>
+                                ) : store.includes("huawei") ? (
+                                    <Img_icon icon={HuaweiIcon}
+                                    ></Img_icon>
+                                ) : store.includes("app.mi") ? (
+                                    <Img_icon icon={GetAppsIcon}
+                                    ></Img_icon>
+
+                                ) : <></>}
+                            </a>
+                        )) : <></>}
+                        </div>
+
                     {project.url_sources.map((source) =>
                     (
-                        <Button size="small" sx={{ color: 'black' }} startIcon={<GitHubIcon/>}/* color="primary" */>
+                        <Button size="large" sx={{ color: 'black' }} startIcon={<GitHubIcon />}/* color="primary" */>
                             {source.includes("github") ? (
                                 <>
-                                GitHub
+                                    GitHub
                                 </>
-                                ) : <></>}
+                            ) : <></>}
                         </Button>
 
                     )

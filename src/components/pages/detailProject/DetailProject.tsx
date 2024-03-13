@@ -24,9 +24,15 @@ export default function DetailProject() {
                     >
                         <ArrowBackIcon />
                     </IconButton>
-                    {/* <Typography variant="h2" component="div" sx={{ flexGrow: 1 }}> */}
-                    {/* Photos */}
-                    {/* </Typography> */}
+                    {
+                        data.url_icon != null && data.url_icon != "" ?
+                            <><img className={style.icon}
+                                src={data.url_icon}
+                                onDragStart={(event) => event.preventDefault()}
+                            ></img></>
+                            : <></>
+                    }
+
                     <h2>
                         {data.title}
                     </h2>
@@ -39,21 +45,21 @@ export default function DetailProject() {
                 </strong>
             </div>
             <div style={{}}>
-            <ImageList sx={{
-                flexWrap: 'nowrap',
-            }} cols={data.url_images.length+2} gap={10}>
-                {data.url_images.map((img) => (
-                    <ImageListItem key={img} sx={{
-                        display: 'flex',
-                        width: '250px'
-                    }}>
-                        <img className={style.img_screen} src={img!} alt={img!} onDragStart={(event) => event.preventDefault()} />
-                    </ImageListItem>
-                ))}
+                <ImageList sx={{
+                    flexWrap: 'nowrap',
+                }} cols={data.url_images.length + 2} gap={10}>
+                    {data.url_images.map((img) => (
+                        <ImageListItem key={img} sx={{
+                            display: 'flex',
+                            width: '250px'
+                        }}>
+                            <img className={style.img_screen} src={img!} alt={img!} onDragStart={(event) => event.preventDefault()} />
+                        </ImageListItem>
+                    ))}
 
-            </ImageList>
+                </ImageList>
             </div>
-            
+
 
 
 
