@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Gallery from '../components/pages/Gallery'
+import Gallery from '../components/pages/gallery/Gallery'
 import DetailProject from '../components/pages/detailProject/DetailProject'
 import App from '../App'
 

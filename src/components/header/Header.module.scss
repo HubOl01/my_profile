@@ -1,3 +1,16 @@
-h1{
+h1 {
     text-align: center;
+}
+
+@media (max-width: 699px) {
+    .headerHeight {
+        height: 1em;
+        // height: 50%;
+    }
+}
+@media screen and (min-width: 700px) {
+    .headerHeight {
+        height: 2em;
+        // height: 50%;
+    }
 }

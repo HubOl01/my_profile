@@ -1,9 +1,12 @@
 import './Header.module.scss'
+import styles from './Header.module.scss';
 
 export default function Header() {
   return (
-      <div>
-        {/* <h1>About myself</h1> */}
+      <div className={styles.headerHeight}>
+        <a href="\gallery">Галерея</a>
+        
+
       </div>
   )
 }
