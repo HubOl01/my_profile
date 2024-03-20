@@ -1,21 +1,8 @@
-import Viewer from 'react-viewer';
 import { photos } from '../../../data/my_photos';
 import { useState } from 'react';
-import { Box, ImageList, ImageListItem, Modal } from '@mui/material';
+import { IconButton, ImageList, ImageListItem, Link, Modal, useMediaQuery } from '@mui/material';
 import styles from './style.module.scss'
-
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 600,
-  bgcolor: '#000',
-  
-  // border: '2px solid #000',
-  boxShadow: 24,
-  // p: 4,
-};
+import CloseIcon from '@mui/icons-material/Close';
 
 
 export default function Gallery() {
@@ -23,10 +10,13 @@ export default function Gallery() {
   // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [photoCurrent, setPhotoCurrent] = useState(photos[0]);
+  const table = useMediaQuery('(max-width:969px) and (min-width:500px)');
+  const desktop = useMediaQuery('(min-width:970px)');
+  const cols = desktop ? 3 : table ? 2 : 1; // Set 3 columns for screen width >= 600px, else 2 columns
   // const photoCurrent: IPhoto = ;
   return (
     <>
-      <ImageList /* sx={{ width: 500, height: 450 }} */ cols={3} >
+      <ImageList cols={cols} >
         {photos.map((photo) => (
           <ImageListItem key={photo.src}>
             <img
@@ -42,56 +32,52 @@ export default function Gallery() {
           </ImageListItem>
         ))}
       </ImageList>
-            {/* <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-            >
-              <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Text in a modal
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                </Typography>
-              </Box>
-            </Modal> */}
-             <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-              // style={style}
-            >
-              <Box sx={style}>
-                <img
-                  // srcSet={`${photoCurrent.src}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                  // height={500}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'contain'
-                  }}
-                  
-                  src={photoCurrent.src}
-                  alt={photoCurrent.alt}
-                  loading="lazy"
-                />
-                {photoCurrent.description != null ?
-                <div>
-                  {/* {photoCurrent.alt} */}
-                  {photoCurrent.description!.map((line, index) => (
-                    <div key={index}>
-                        <div>{line}</div>
-                        {line == "\n" ? <br /> : <></>}
-                    </div>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <>
+          <IconButton
+            onClick={handleClose}
+            aria-label="close"
+            sx={{
+              margin: "10px",
+              top: '0',
+              right: '0',
+              position: 'absolute'
+            }}>
+            <CloseIcon sx={{ color: 'white' }} />
+          </IconButton>
+
+          <div className={styles.modal}>
+
+            <img className={styles.imageNormal}
+              src={photoCurrent.src}
+              alt={photoCurrent.alt}
+              loading='lazy'
+            />
+            {photoCurrent.description != null ?
+              <div className={styles.description} onClick={handleClose}>
+                {photoCurrent.description!.map((line, index) => (
+                  <div key={index}>
+                    <div>{line}</div>
+                    {line == "\n" || line == "" ? <br /> : <></>}
+                  </div>
                 ))}
-                </div>
-                : <></>
-                }
-              </Box>
-            </Modal>
+                {photoCurrent.linkSource != null ?
+                  <div style={{ padding: '30px 0px 0px 0px'}}>
+                    Взято из источника:
+                    <Link href={photoCurrent.linkSource}> {photoCurrent.linkSource}</Link>
+                  </div> : <></>}
+
+              </div>
+              : <></>
+            }
+          </div>
+        </>
+      </Modal>
     </>
   )
 }
