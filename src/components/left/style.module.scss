@@ -1,0 +1,15 @@
+@media (max-width: 699px) {
+    .img_icon {
+        width: 2em;
+        // height: 50%;
+    }
+}
+@media screen and (min-width: 700px) {
+    .img_icon {
+        width: 3em;
+        // height: 50%;
+    }
+}
+div {
+    display: "flex";
+}

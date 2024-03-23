@@ -1,0 +1,43 @@
+.clipLabel {
+    
+    padding: 5px 10px;
+    width: fit-content;
+    color: white;
+    border-radius: 20px;
+}
+.platforms {
+    @extend .clipLabel;
+    margin: 5px 10px;
+    background-color: rgb(59, 59, 59);
+    font-size: small;
+
+    //   color: 'black',
+    //   backgroundColor: 'white'
+}
+.posPlatforms {
+    position: absolute;
+    top: 3px;
+}
+.posFullStack{
+    // position: absolute;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: 45px;
+}
+
+.fullStack{
+    margin: 5px 0px 5px 10px;
+    @extend .clipLabel;
+    background-color: rgb(59, 59, 59);
+    font-size: small;
+}
+// .CardActionArea:hover {
+//     background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+//     position: relative;
+//     top: 0px;
+//     width: 100%;
+//     height: 100%;
+// }
+

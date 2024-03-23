@@ -1,0 +1,177 @@
+h1{
+    font-family: cursive;
+    font-weight: 900;
+    font-size: 400%;
+    text-align: center;
+}
+
+img{
+    width: 130%;
+    height: 130%;
+}
+@media (min-width: 600px) {
+.Start{
+    display: grid;
+    grid-template-columns: 330px;
+    grid-gap: 1rem;
+    grid-template-areas: "card Text";
+}
+.card{
+    margin: 15px;
+    width: 330px;
+    height: 850px;
+    grid-area: card;
+        max-width: 330px;
+}
+.Text {    
+    font-size: 20px;
+    text-align: justify;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 40px;
+    grid-area: Text;
+    min-width: 280px;
+}
+.isuct{
+    width: 10%;
+    height: 10%;
+}
+}
+
+@media (max-width: 600px) {
+.card-body{
+    font-size: 14px;
+}
+.card{
+    margin-top: 1rem;
+    width: 100%;
+}
+.Text {    
+    font-size: 18px;
+    text-align: justify;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 40px;
+    grid-area: Text;
+    }
+    .isuct{
+        width: 5%;
+        height: 5%;
+    }
+    h1{
+        font-size: 300%;
+    }
+}
+
+
+
+.text-format{
+    color: gray;
+}
+.img-icon{
+    display: block;
+    position: relative;
+    margin: 0 auto 0;
+    width: 28px;
+    height: 28px;
+}
+.websites{
+    margin-top: -10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "web1 web2 web3"; 
+}
+.web1{
+    text-align: left;
+    grid-area: web1;
+}
+.web2{
+    text-align: left;
+    grid-area: web2;
+}
+.web3{
+    text-align: left;
+    grid-area: web3;
+}
+.float-right{
+    text-align: right;
+}
+.img-photos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "photo1 photo2 photo3 photo4";
+}
+
+
+.photo1{
+    text-align: center;
+    grid-area: photo1;
+    height: 70%;
+    width: 75%;
+    transition: 1s;
+}
+.photo1:hover{
+    transform: scale(1.2);
+}
+.photo2{
+    text-align: center;
+    grid-area: photo2;
+    height: 70%;
+    width: 75%;
+    transition: 1s;
+}
+.photo2:hover{
+    transform: scale(1.2);
+}
+.photo3{
+    text-align: center;
+    grid-area: photo3;
+    height: 70%;
+    width: 75%;  
+    transition: 1s;  
+}
+.photo3:hover{
+    transform: scale(1.2);
+}
+
+.photo4{
+    text-align: center;
+    grid-area: photo4;
+    height: 70%;
+    width: 50%;
+    transition: 1s;
+}
+.photo4:hover{
+    transform: scale(1.2);
+}
+
+.card-img-top{
+    height: 100%;
+    width: 100%;
+}
+
+
+html {
+    height: 100%;
+}
+body{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+footer {
+    width: 100%;
+    height: 30px;
+}
+.float-right{
+    text-align: right;
+}
+.footer-text{
+    text-align: center;
+}
